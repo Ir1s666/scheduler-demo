@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react'
+
+import { renderButton } from './scheduler-demo/index'
+
+import { workList } from './scheduler-demo/scheduler'
+
+import { eventBus } from './scheduler-demo/utils'
+
 
 function App() {
+  React.useEffect(() => {
+    renderButton()
+  }, [])
+
+  // TODO 订阅一个workList的变化，渲染可视化的work list变化
+  eventBus.subscribe('change!', () => {
+    console.log('change', workList)
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }

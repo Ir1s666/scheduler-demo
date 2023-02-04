@@ -1,0 +1,29 @@
+button {
+    margin: 10px;
+    padding: 5px;
+}
+
+span {
+    word-break: break-all;
+}
+
+#content-box{
+    background-color: #fbfbfd;
+    padding: 5px
+}
+
+.pri-1 {
+    color: red
+}
+
+.pri-2 {
+    color: orange
+}
+
+.pri-3 {
+    color: gold
+}
+
+.pri-4 {
+    color: yellowgreen
+}
