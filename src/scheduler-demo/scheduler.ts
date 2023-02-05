@@ -10,11 +10,11 @@ import {
     unstable_shouldYield as shouldYield
 } from 'scheduler'
 
-import { insertItem, publishWorkListChange, eventBus } from './utils'
+import { insertItem, eventBus } from './utils'
 
 import type { CallbackNode } from 'scheduler'
 
-type Priority =
+export type Priority =
     | typeof IdlePriority
     | typeof ImmediatePriority
     | typeof LowPriority
@@ -96,7 +96,7 @@ const execute = (work: Work, didTimeout?: boolean): any => {
     while ((needSync || !shouldYield()) && work.count) {
         work.count--
 
-        eventBus.publish('change!')
+        eventBus.publish('change', { count: work.count, priority: work.priority })
         insertItem(work.priority, contentBox)
     }
 

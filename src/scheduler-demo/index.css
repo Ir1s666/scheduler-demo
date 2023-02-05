@@ -7,23 +7,23 @@ span {
     word-break: break-all;
 }
 
-#content-box{
+#content-box {
     background-color: #fbfbfd;
     padding: 5px
 }
 
-.pri-1 {
+.pri-1, #works-1 {
     color: red
 }
 
-.pri-2 {
+.pri-2, #works-2 {
     color: orange
 }
 
-.pri-3 {
+.pri-3, #works-3 {
     color: gold
 }
 
-.pri-4 {
+.pri-4, #works-4 {
     color: yellowgreen
 }
